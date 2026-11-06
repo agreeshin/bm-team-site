@@ -74,10 +74,14 @@ const services = [
   <body>
     <a class="skip-link" href="#main">Перейти к содержимому</a>
     <header class="site-header" data-header>
-      <div class="container header-inner">
+      <div class="header-inner">
         <a class="brand" href="#top" aria-label="URSA MAJOR TECH — в начало страницы">
-          <span class="brand-mark"><img src={brandMark.src} width="52" height="52" alt="" /></span>
-          <span class="brand-name">URSA MAJOR <span>TECH<span class="brand-dot"><ArrowIcon /></span></span></span>
+          <svg class="brand-lockup" viewBox="0 0 470 210" width="208" height="93" aria-hidden="true" focusable="false">
+            <image href={brandMark.src} x="5" y="15" width="180" height="180" preserveAspectRatio="xMidYMid meet" />
+            <text class="brand-lockup-main" x="214" y="61" fill="#edf1ee">URSA</text>
+            <text class="brand-lockup-main" x="214" y="125" fill="#edf1ee">MAJOR</text>
+            <text class="brand-lockup-accent" x="214" y="189" fill="#a3e4ec">TECH</text>
+          </svg>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню" hidden>
           <span></span><span></span>
