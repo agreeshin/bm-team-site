@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.astro/
+.codegraph/
+.backups/
+.env
+.env.*
+!.env.example
+qa-output/
+test-results/
+playwright-report/
+*.log
+.DS_Store
