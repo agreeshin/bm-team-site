@@ -38,8 +38,7 @@
   .site-header { position: relative; z-index: 20; }
   .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; padding-inline: 32px; min-height: 100px; gap: 24px; }
   .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
-  .brand-lockup { display: block; width: 208px; height: auto; flex-shrink: 0; }
-  .brand-lockup text { font-family: var(--font); font-size: 56px; font-weight: 680; letter-spacing: 2px; }
+  .brand-logo { display: block; width: 208px; height: auto; flex-shrink: 0; }
   .primary-nav { display: flex; align-items: center; gap: 32px; font-size: 14px; font-weight: 500; }
   .primary-nav a { transition: color .2s; }
   .primary-nav a:hover { color: var(--cyan); }
@@ -104,7 +103,8 @@
   .contact-links a:hover .contact-value { color: var(--cyan); }
   .site-footer { padding-block: 32px; }
   .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-  .footer-brand { font-size: 14px; letter-spacing: .025em; font-weight: 600; }
+  .footer-brand { display: inline-flex; align-items: center; flex-shrink: 0; }
+  .footer-brand-logo { display: block; width: 166px; height: auto; }
   .legal { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted); line-height: 1.6; }
   .back-top { display: flex; gap: 24px; align-items: center; font-size: 14px; }.back-top > span { color: var(--cyan); font-size: 20px; }
   @media (hover: hover) and (prefers-reduced-motion: no-preference) { .service:hover { transform: translateY(-5px); box-shadow: 0 28px 70px #02121d60, inset 0 1px 0 #ffffff0a; } }
@@ -120,7 +120,7 @@
   }
   @media (max-width: 900px) {
     .container { width: calc(100% - 48px); }.section-space { padding-block: 64px; }.section-heading { margin-bottom: 32px; }
-    .header-inner { min-height: 88px; gap: 12px; padding-inline: 24px; }.brand-lockup { width: 195px; }.primary-nav { gap: 12px; }.primary-nav .nav-contact { padding-inline: 12px; }.nav-contact span { margin-left: 8px; }
+    .header-inner { min-height: 88px; gap: 12px; padding-inline: 24px; }.brand-logo { width: 195px; }.primary-nav { gap: 12px; }.primary-nav .nav-contact { padding-inline: 12px; }.nav-contact span { margin-left: 8px; }
     .hero-inner { min-height: 640px; padding-top: 64px; padding-bottom: 64px; }.hero-copy { width: 90%; }h1 { font-size: 78px; }
     .service { padding: 28px; }.service h3 { font-size: 28px; }.service-icon { margin-bottom: 22px; }.service-icon svg { width: 42px; height: 42px; }
     .case h3 { font-size: 32px; }.case { padding: 22px; }
@@ -130,7 +130,7 @@
   }
   @media (max-width: 700px) {
     html { scroll-padding-top: 20px; }.container { width: calc(100% - 40px); }.section-space { padding-block: 52px; }h2 { font-size: clamp(34px, 7vw, 44px); }
-    .header-inner { min-height: 80px; position: relative; padding-inline: 20px; }.brand-lockup { width: 166px; }
+    .header-inner { min-height: 80px; position: relative; padding-inline: 20px; }.brand-logo { width: 166px; }
     .primary-nav { flex-wrap: wrap; gap: 12px 20px; padding-block: 16px; justify-content: end; }.primary-nav .nav-contact { padding: 0; background: none; }
     .header-inner:has(.menu-toggle[hidden]) { flex-wrap: wrap; gap: 0; }.header-inner:has(.menu-toggle[hidden]) .primary-nav { width: 100%; justify-content: start; padding-top: 0; }
     .nav-enhanced .menu-toggle { display: flex; flex-direction: column; gap: 6px; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--line); background: none; color: var(--white); cursor: pointer; }

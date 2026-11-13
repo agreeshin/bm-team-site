@@ -1,9 +1,10 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import ArrowIcon from '../components/ArrowIcon.astro';
-import logo from '../../assets/UMT-logo.svg';
-import logoPng from '../../assets/UMT-logo.png';
-import brandMark from '../../assets/brand/brand-mark.svg';
+import logo from '../../assets/brand/medved-soft-logo.svg';
+import logoSocial from '../../assets/brand/medved-soft-logo-social.png';
+import logoHorizontal from '../../assets/brand/medved-soft-logo-horizontal-light.svg';
+import brandMark from '../../assets/brand/medved-soft-mark-light.svg';
 import '@fontsource-variable/manrope';
 import '../styles/global.css';
 
@@ -20,14 +21,14 @@ const staticStars = Array.from({ length: 120 }, (_, i) => ({
   radius: i % 7 === 0 ? 1.5 : .8, opacity: .25 + (i % 5) * .11,
 }));
 
-const title = 'Ursa Major Tech — ИИ и автоматизация бизнес-процессов';
-const description = 'Автоматизируем рутину, обработку документов и работу с данными. ИИ-ассистенты, интеграции и инженерная разработка Ursa Major Tech — от пилота до внедрения.';
+const title = 'Медведь Софт — ИИ и автоматизация бизнес-процессов';
+const description = 'Автоматизируем рутину, обработку документов и работу с данными. ИИ-ассистенты, интеграции и инженерная разработка Медведь Софт — от пилота до внедрения.';
 const canonical = Astro.site ? new URL('/', Astro.site).href : undefined;
-const socialImage = Astro.site ? await getImage({ src: logoPng, format: 'png', width: 1024 }) : undefined;
+const socialImage = Astro.site ? await getImage({ src: logoSocial, format: 'png', width: 1024 }) : undefined;
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Ursa Major Tech',
+  name: 'Медведь Софт',
   legalName: 'ИП Гришин Анатолий Александрович',
   identifier: { '@type': 'PropertyValue', propertyID: 'ОГРНИП', value: '317665800027995' },
   email: 'greeshin.anatoly@yandex.ru',
@@ -54,17 +55,17 @@ const services = [
     <meta name="description" content={description} />
     <meta name="robots" content={Astro.site ? 'index, follow' : 'noindex, nofollow'} />
     {canonical && <link rel="canonical" href={canonical} />}
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={brandMark.src} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
-    <meta property="og:site_name" content="Ursa Major Tech" />
+    <meta property="og:site_name" content="Медведь Софт" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
     {socialImage && <meta property="og:image" content={new URL(socialImage.src, Astro.site).href} />}
-    {socialImage && <meta property="og:image:width" content="1024" />}
-    {socialImage && <meta property="og:image:height" content="1024" />}
-    {socialImage && <meta property="og:image:alt" content="Логотип команды Ursa Major Tech" />}
+    {socialImage && <meta property="og:image:width" content={String(socialImage.attributes.width)} />}
+    {socialImage && <meta property="og:image:height" content={String(socialImage.attributes.height)} />}
+    {socialImage && <meta property="og:image:alt" content="Логотип команды МЕДВЕДЬ СОФТ" />}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -75,13 +76,8 @@ const services = [
     <a class="skip-link" href="#main">Перейти к содержимому</a>
     <header class="site-header" data-header>
       <div class="header-inner">
-        <a class="brand" href="#top" aria-label="URSA MAJOR TECH — в начало страницы">
-          <svg class="brand-lockup" viewBox="0 0 470 210" width="208" height="93" aria-hidden="true" focusable="false">
-            <image href={brandMark.src} x="5" y="15" width="180" height="180" preserveAspectRatio="xMidYMid meet" />
-            <text class="brand-lockup-main" x="214" y="61" fill="#edf1ee">URSA</text>
-            <text class="brand-lockup-main" x="214" y="125" fill="#edf1ee">MAJOR</text>
-            <text class="brand-lockup-accent" x="214" y="189" fill="#a3e4ec">TECH</text>
-          </svg>
+        <a class="brand" href="#top" aria-label="МЕДВЕДЬ СОФТ — в начало страницы">
+          <img class="brand-logo" src={logoHorizontal.src} width={logoHorizontal.width} height={logoHorizontal.height} alt="" />
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню" hidden>
           <span></span><span></span>
@@ -181,7 +177,7 @@ const services = [
       </section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-inner"><a class="footer-brand" href="#top">URSA MAJOR TECH</a><div class="legal"><span>ИП Гришин Анатолий Александрович</span><span>ОГРНИП 317665800027995</span></div><a class="back-top" href="#top">Наверх <span aria-hidden="true">↑</span></a></div></footer>
+    <footer class="site-footer"><div class="container footer-inner"><a class="footer-brand" href="#top" aria-label="МЕДВЕДЬ СОФТ — в начало страницы"><img class="footer-brand-logo" src={logoHorizontal.src} width={logoHorizontal.width} height={logoHorizontal.height} alt="" /></a><div class="legal"><span>ИП Гришин Анатолий Александрович</span><span>ОГРНИП 317665800027995</span></div><a class="back-top" href="#top">Наверх <span aria-hidden="true">↑</span></a></div></footer>
 
     <script>
       import { initNavigation } from '../scripts/navigation';
